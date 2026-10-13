@@ -1,0 +1,67 @@
+# 8. Assembly and Animation: Quick Return Mechanism
+
+## Aim
+To design a mechanism from scratch in Fusion 360, and to understand the basics of modelling, assembly and animation. The mechanism chosen is the **Quick Return Mechanism**.
+
+## Background
+
+### What is a quick return mechanism?
+A quick return mechanism turns the steady rotation of a motor into a back-and-forth motion in which the **forward (working) stroke is slow and the return stroke is fast**. It is used in machines such as shapers and slotting machines, where cutting happens only on the forward stroke, so a faster return saves time.
+
+### How this model works
+- The green **disc** is the driving part and rotates at a constant speed.
+- The blue **crank** (slotted lever) pivots at the base and is moved by the disc.
+- The top end of the crank pushes the **slider** along its guide, so the slider moves back and forth.
+- Because the crank swings through different angles on the two halves of a disc rotation, the slider takes longer on one stroke than on the other. That difference is the quick return effect.
+
+## Components
+Each part is a separate component, as explained in [bodies_vs_components.md](Task_7_Bodies_Vs_Components).
+
+| Component | Role |
+|-----------|------|
+| `Base:1` | Base plate and vertical post that hold the whole mechanism |
+| `Disc:1` | Driving disc, rotates about the post |
+| `Crank:1` | Slotted lever that swings about a pivot at the base |
+| `Slider:1` | Moves back and forth along the top guide |
+
+## Base sketch
+The base was drawn as a front-view profile in mm: a base plate **122 mm wide and 12 mm thick**, with a vertical post **16 mm wide and 166 mm tall** standing on it. Small rectangular features on the post are dimensioned with 3, 4, 6, 8, 10, 16, 22, 32 and 72 mm values.
+
+![Sketch of the base](images/base_sketch.png)
+
+## Assembly
+The browser shows the relationships used to assemble the mechanism:
+
+| Type | Name |
+|------|------|
+| Joint | Revolute 1 |
+| Joint | Revolute 2 |
+| Joint | Slider 4 |
+| Constraint | Constraint 1 (Tangent) |
+| Constraint | Constraint 2 (Tangent) |
+
+- The revolute joints let the disc and the crank rotate about their pins.
+- The slider joint lets the slider move in a straight line only.
+- The tangent constraints keep the parts in contact as the mechanism moves.
+
+![Assembly, front view with joints in the browser](images/assembly_front_view.png)
+
+![Assembly, isometric view](images/assembly_isometric_view.png)
+
+## Animation
+The mechanism is animated by driving a revolute joint: the disc turns and the crank and slider follow. The screen recording shows the full motion:
+
+[quick_return_mechanism.mp4](video/quick_return_mechanism.mp4)
+
+## Steps
+1. Sketch and model each part (base, disc, crank, slider) as its own component.
+2. Place the components in the assembly.
+3. Add revolute joints for the disc and the crank, and a slider joint for the slider.
+4. Add tangent constraints where the parts must stay in contact.
+5. Drive the revolute joint to animate the mechanism, and record it.
+
+## Notes
+- Making each part a component is what allows joints and animation. A body cannot take a joint.
+- Joints decide how a part may move, so choosing the right joint (revolute for rotation, slider for straight-line motion) is the key skill in assembly.
+- Driving one joint moves the rest of the mechanism, so one input shows the whole motion.
+- What this task covers: modelling parts, components, joints, constraints and animation in Fusion 360.
