@@ -1,4 +1,4 @@
-# 10. Designing a Parametric Box
+# 9. Designing a Parametric Box
 
 ## Aim
 To design a parametric box in Fusion 360 with threads, and to design lids for it with snap joints and slide joints, then assemble and animate them.

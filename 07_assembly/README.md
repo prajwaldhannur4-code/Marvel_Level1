@@ -1,4 +1,4 @@
-# 9. Assembly and Animation: Quick Return Mechanism
+# 7. Assembly and Animation: Quick Return Mechanism
 
 ## Aim
 To design a mechanism from scratch in Fusion 360, and to understand the basics of modelling, assembly and animation. The mechanism chosen is the **Quick Return Mechanism**.
@@ -15,7 +15,7 @@ A quick return mechanism turns the steady rotation of a motor into a back-and-fo
 - Because the crank swings through different angles on the two halves of a disc rotation, the slider takes longer on one stroke than on the other. That difference is the quick return effect.
 
 ## Components
-Each part is a separate component, as explained in [bodies_vs_components.md](Task_7_Bodies_Vs_Components).
+Each part is a separate component, as explained in [bodies_vs_components.md](bodies_vs_components.md).
 
 | Component | Role |
 |-----------|------|
